@@ -1,0 +1,163 @@
+.homeslider-container{
+	margin-bottom: 20px !important;
+	overflow: hidden;
+	margin: auto;
+	.slide{
+		.caption{
+			position: absolute;
+			left: 52%;
+			top: 14%;
+			background: transparent;
+			color: $black;
+			padding-right: 50px;
+			width: 50%;
+			p{
+				font-size: rem(18px);
+				color: #333;
+				margin-bottom: rem(30px);
+				font-family: $secondary-font;
+			} 
+			h1{
+				font-size: rem(90px);
+				font-weight: normal;
+				font-family: "Playfair Display", sans-serif;
+			}
+			h2{
+				display: none;
+			}
+			.button{
+				text-transform: uppercase;
+				display: inline-block;
+				font-size: 120%;
+				padding: 13px 26px;
+				font-weight: 700;
+				font-size: rem(18px);
+				font-family: $brand-font;  
+				color: white;
+				background: $brand-primary;
+				@include border-radius(35px);
+				@include transition(0.2s);
+				-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.07);
+				-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.07);
+				box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.07);
+				&:hover{
+					color: white;
+					text-decoration: none;
+					background: $brand-hover;
+				}
+			}
+			.price{
+				font-size: 270%;
+				font-weight: 600;
+			}
+		}
+	}
+	.homeslider_nav{
+		text-indent: 0;
+		background: none;
+		top:57%;
+		@include transition(0.2s);
+		svg{
+			fill: $light-grey;
+			&:hover{
+				fill: $black;
+			}
+		}
+		&.prev{
+			left: -50px;
+		}
+		&.next{
+			right: -50px;
+		}
+	}
+	&:hover{
+		.homeslider_nav{
+			&.prev{
+				left: 15px;
+			}
+			&.next{
+				right: 15px;
+			}			
+		}
+	}
+	.homeslider_tabs{
+		position: absolute;
+		bottom: 5px;
+		z-index: 10;
+		text-align: center;
+		width:100%;
+		li{
+			display: inline-block;
+			margin: 0px 3px;
+			a{
+				font-size: 0px;
+				display: block;
+				width: 12px;
+				height: 12px;
+				@include border-radius(100%);
+				border: 2px solid $light-grey;
+				&:hover{
+					border: 2px solid $brand-primary;
+					background: $brand-primary;
+				}
+			}
+			&.homeslider_here{
+				a{
+					border: 2px solid $brand-primary;
+					background: $brand-primary;					
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.homeslider-container{
+		.slide{
+			.caption{
+				padding-left: rem(0px);
+				h1{
+					font-size: 50px;
+				}
+				.button{
+					display: none;
+				}
+			}
+		}
+	}	
+}
+
+@media (max-width: 1024px){
+	.homeslider-container{
+		.slide{
+			.caption{
+				padding-left: rem(0px);
+				h1{
+					font-size: 70px;
+				}
+			}
+		}
+	}	
+}
+
+@include media-breakpoint-down(xs) {
+	.homeslider-container{
+		.slide{
+			.caption{
+				padding-left: rem(0px);
+				h1{
+					font-size: 20px;
+				}
+				p{
+					display: none;
+				}
+				.price{
+					font-size: 140%;
+				}
+			}
+		}
+		.homeslider_tabs{
+			bottom:-6px;
+		}
+	}	
+}
